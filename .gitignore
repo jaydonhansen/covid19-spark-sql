@@ -1,0 +1,11 @@
+# Compiled files
+*.tfstate
+*.tfstate.*.backup
+*.tfstate.backup
+# plan files
+*.plan
+# Module directory
+.terraform/
+credentials/
+.terraform*
+.DS_store

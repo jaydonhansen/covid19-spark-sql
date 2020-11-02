@@ -1,0 +1,35 @@
+Author: Jaydon Hansen - 45875683
+
+Prerequisites:
+    - Hashicorp Terraform >= 0.12.20
+    - Google Cloud SDK
+
+All Terraform files for the architecture configuration are contained in this folder.
+
+The architecture is as follows:
+    - VPC Network:
+        - BigQuery table
+        - Cloud Dataproc cluster
+            - Jupyter notebook
+        - 1x Test Spark job
+        - COVID-19 PySpark job ("spark_sql_query.py", hosted on a public bucket)
+
+Please note that you need to have a Service Account with 'Editor' permissions on GCP,
+download the key json and save it as "credentials/google.json" before you can deploy.
+
+Instructions to deploy:
+    1. Run 'terraform init' to set up Terraform.
+    2. Edit the 'plan.sh' shell script and change the variables to the configuration you
+       want. Please note that your bucket name has to be unique.
+    3. Run 'plan.sh' to set up a Terraform plan to compile a tfstate.
+    4. Run 'terraform apply "run.plan"' to deploy the architecture and run the jobs.
+
+After deploying, you can open Google Data Studio and import the BigQuery tables for exploration.
+
+'spark_sql_query.py' contains the queries executed by the Dataproc cluster in this project.
+
+'COVID-19_Report.pdf' contains the output of some of the Data Studio analyses performed. Keep in mind that you can explore the
+datasets using the Data Studio Explorer from your BigQuery tables.
+
+You can find a permanent link to the data analyses performed in my project using the data generated from the queries here:
+https://datastudio.google.com/reporting/83874971-a588-43e7-a189-771292db8274
