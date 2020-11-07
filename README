@@ -1,5 +1,3 @@
-Author: Jaydon Hansen - 45875683
-
 Prerequisites:
     - Hashicorp Terraform >= 0.12.20
     - Google Cloud SDK
@@ -30,6 +28,3 @@ After deploying, you can open Google Data Studio and import the BigQuery tables 
 
 'COVID-19_Report.pdf' contains the output of some of the Data Studio analyses performed. Keep in mind that you can explore the
 datasets using the Data Studio Explorer from your BigQuery tables.
-
-You can find a permanent link to the data analyses performed in my project using the data generated from the queries here:
-https://datastudio.google.com/reporting/83874971-a588-43e7-a189-771292db8274
